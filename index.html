@@ -12,6 +12,7 @@
      crossorigin="anonymous"
    ></script>
     <title>jiyeon</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <!-- navbar -->
@@ -21,7 +22,7 @@
             <a href="#">jiyeon</a>
         </div>
         <ul class="navbar__menu">
-            <li class="navbar__menu__item">Home</li>
+            <li class="navbar__menu__item active">Home</li>
             <li class="navbar__menu__item">About</li>
             <li class="navbar__menu__item">Skills</li>
             <li class="navbar__menu__item">My work</li>
@@ -31,13 +32,13 @@
     </nav>
     <!-- Home -->
     <section id="home">
-        <img src="imgs/바다.jpg" alt="profile img" class="home__avatar"> <!--사진 첨부하기-->
+        <img src="imgs/프로필.png" alt="profile img" class="home__avatar"> <!--사진 첨부하기-->
         <h1 class="home__title">Hello, <br/> Hello 가나다라마바사아자차카타파하</h1>
         <h2 class="home__description">가나다라마바사아자차카타파하</h2>
         <button class="home__contact">Contact Me</button>
     </section>
     <!-- About -->
-    <section id="about">
+    <section id="about" class="section section__container">
         <h1>About me</h1>
         <p>가나다라마바사아자차카타파하</p>
         <div class="about__majors">
@@ -101,7 +102,7 @@
         </div>
     </section>
     <!-- Skills -->
-    <section id="skills">
+    <section id="skills" class="section">
         <div class="section__container">
             <h1>Siills</h1>
             <h2>Skills & Attributes</h2>
@@ -110,47 +111,59 @@
             </p>
             <div class="skillset">
                 <div class="skillset__left">
-                    <h3 class="skillset_title">
+                    <h3 class="skillset__title">
                         skills
                     </h3>
-                    <div class="skill__description">
-                        <span>HTML</span>
-                        <span>99%</span>
-                        <div class="skill__bar">
-                            <div class="skill_value" style="width: 99%;"></div>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>HTML</span>
+                            <span>99%</span>
+                            </div>
+                            <div class="skill__bar">
+                                <div class="skill_value" style="width: 99%;"></div>
                         </div>
                     </div>
-                    <div class="skill__description">
-                        <span>CSS</span>
-                        <span>90%</span>
-                        <div class="skill__bar">
-                            <div class="skill_value" style="width: 90%;"></div>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>CSS</span>
+                            <span>90%</span>
                         </div>
-                    </div>
-                    <div class="skill__description">
-                        <span>JavaScript</span>
-                        <span>90%</span>
                         <div class="skill__bar">
                             <div class="skill_value" style="width: 90%;"></div>
                         </div>
                     </div>
-                    <div class="skill__description">
-                        <span>TypeScript</span>
-                        <span>80%</span>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill_value" style="width: 90%;"></div>
+                        </div>                        
+                    </div>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>TypeScript</span>
+                            <span>80%</span>
+                        </div>
                         <div class="skill__bar">
                             <div class="skill_value" style="width: 80%;"></div>
-                        </div>
+                        </div>                        
                     </div>
-                    <div class="skill__description">
-                        <span>React</span>
-                        <span>88%</span>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>React</span>
+                            <span>88%</span>
+                        </div>
                         <div class="skill__bar">
                             <div class="skill_value" style="width: 88%;"></div>
-                        </div>
+                        </div>                        
                     </div>
-                    <div class="skill__description">
-                        <span>NodeJS</span>
-                        <span>77%</span>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>NodeJS</span>
+                            <span>77%</span>  
+                        </div>
                         <div class="skill__bar">
                             <div class="skill_value" style="width: 77%;"></div>
                         </div>
