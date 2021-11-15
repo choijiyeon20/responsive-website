@@ -45,3 +45,23 @@ function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" });
 }
+
+//arrow-up 사라지게 하기
+const arrowBtn = document.querySelector(".arrow-up");
+window.addEventListener("scroll", () => {
+  if (
+    document.body.scrollTop > 200 ||
+    document.documentElement.scrollTop > 200
+  ) {
+    arrowBtn.style.display = "block";
+  } else {
+    arrowBtn.style.display = "none";
+  }
+});
+//arrow-up 버튼 누르면 home으로 이동
+arrowBtn.addEventListener("click", () => {
+  window.scroll({
+    top: 0,
+    behavior: "smooth",
+  });
+});
