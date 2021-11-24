@@ -41,27 +41,56 @@ navbarToggleBtn.addEventListener("click", () => {
   navbarMenu.classList.toggle("open");
 });
 
+// 프로젝트 js 부분
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+workBtnContainer.addEventListener("click", (e) => {
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  projects.forEach((project) => {
+    if (filter === "*" || filter === project.dataset.type) {
+      project.classList.remove("invisible");
+    } else {
+      project.classList.add("invisible");
+    }
+  });
+  const active = document.querySelector(".category__btn.selected");
+  if (active != null) {
+    active.classList.remove("selected");
+  }
+  e.target.classList.add("selected");
+  projectContainer.classList.add("anim-out");
+  setTimeout(() => {
+    projects.forEach((project) => {
+      console.log(project.dataset.type);
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    projectContainer.classList.remove("anim-out");
+  }, 300);
+});
+
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" });
 }
 
-//arrow-up 사라지게 하기
-const arrowBtn = document.querySelector(".arrow-up");
-window.addEventListener("scroll", () => {
-  if (
-    document.body.scrollTop > 200 ||
-    document.documentElement.scrollTop > 200
-  ) {
-    arrowBtn.style.display = "block";
+// arrow up 버튼 스크롤 될 때 생성
+const arrowUp = document.querySelector(".arrow-up");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add("visible");
   } else {
-    arrowBtn.style.display = "none";
+    arrowUp.classList.remove("visible");
   }
 });
-//arrow-up 버튼 누르면 home으로 이동
-arrowBtn.addEventListener("click", () => {
-  window.scroll({
-    top: 0,
-    behavior: "smooth",
-  });
+// arrow up 버튼 클릭했을 때 home으로 올라가기
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#home");
 });
